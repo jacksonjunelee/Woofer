@@ -4,7 +4,7 @@
 
 <img id="myImage" src=""/>
 
-<script charset="utf-8" src= "http://feather.aviary.com/js/feather.js">
+<script charset="utf-8">
 filepicker.setKey("<%= ENV["FILEPICKER_API"] %>");
 filepicker.pick(
   {service: ['WEBCAM']},
@@ -12,7 +12,7 @@ filepicker.pick(
     console.log(Blob.url);
     document.getElementById('dog_call').pause();
     var img = document.getElementById('myImage');
-    window.onload = function(){
+    img.onload = function(){
       featherEditor.launch({
         image: 'myImage',
         url: Blob.url
