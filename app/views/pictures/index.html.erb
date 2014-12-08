@@ -3,7 +3,6 @@
 <script charset="utf-8">
 filepicker.setKey("<%= ENV["FILEPICKER_API"] %>");
 filepicker.pick(
-  {service: ['WEBCAM']},
   function(Blob){
     console.log(Blob.url);
     document.getElementById('dog_call').pause();
