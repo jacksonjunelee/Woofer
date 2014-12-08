@@ -1,8 +1,13 @@
+<audio loop id="dog_call" class="audio_player" preload="auto" autoplay=true>
+  <source src='dog_call.wav' type="audio/wav">
+  </audio>
+
 <img id="myImage" src=""/>
 
 <script charset="utf-8">
 filepicker.setKey("<%= ENV["FILEPICKER_API"] %>");
 filepicker.pick(
+  {service: ['WEBCAM']},
   function(Blob){
     console.log(Blob.url);
     document.getElementById('dog_call').pause();
