@@ -20,17 +20,9 @@ filepicker.pick(
     }
     img.src = Blob.url;
     //featherEditor.launch
+
   }
 );
-
-
-function launchEditor(id, src) {
-  featherEditor.launch({
-    image: 'myImage',
-    url: Blob.url
-  });
-  return false;
-}
 
 var featherEditor = new Aviary.Feather({
   apiKey: "<%= ENV["AVIARY"] %>",
@@ -38,18 +30,11 @@ var featherEditor = new Aviary.Feather({
   onSave: function(imageID, newURL) {
     var img = document.getElementById(imageID);
     img.src =newURL;
-    document.getElementById('myImage').src = newURL;
   },
 
 });
 
 </script>
-
-<br>
-<a href=newURL onclick="return launchEditor('myImage',
-newURL);">CUTEIFY YOUR DOG!!</a>
-<br>
-<a download="test.jpg" href=newURL>Download</a>
 
 <!-- https://www.filepicker.io/api/file/VXis26wHSMu4a0Kr42DA","filename":"snap.jpg","mimetype":"image/jpeg","size":28208,"isWriteable":true}] -->
 
